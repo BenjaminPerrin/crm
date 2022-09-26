@@ -14,10 +14,11 @@ export class VersionService {
   public subj = new Subject();
 
   //Exemples de behaviorSubjects
-  public behave = new BehaviorSubject(0);
+  public behave = new BehaviorSubject<number>(0);
 
   public nb!: number;
   constructor() {
+    // this.behave = new BehaviorSubject<number>(0);
     //Exemples d’observables
     //this.obs.subscribe((data) => console.log(data));
     //this.obs.subscribe((data) => console.log(data));
@@ -36,5 +37,8 @@ export class VersionService {
     // this.behave.next(Math.random());
     // this.behave.subscribe((data) => console.log(data));
     // this.behave.subscribe((data) => console.log(data));
+  }
+  public changeBehavior() {
+    this.behave.next(this.behave.value + 1);
   }
 }

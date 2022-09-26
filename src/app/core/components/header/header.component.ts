@@ -12,10 +12,6 @@ export class HeaderComponent implements OnInit {
     this.versionservice.behave.subscribe((data) => {
       this.nb = data;
     });
-    console.log(this.versionservice.nb);
-  }
-  public changeBehavior() {
-    this.versionservice.behave.next(this.nb + 1);
   }
 
   ngOnInit(): void {}
