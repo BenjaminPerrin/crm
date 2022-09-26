@@ -9,7 +9,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrdersComponent implements OnInit {
   public collection!: Order[];
-  public test = 'je test le Property binding';
+  public title = 'je test le Property binding';
   constructor(private orderservice: OrdersService) {
     this.orderservice.collection$.subscribe((data) => {
       this.collection = data;
@@ -18,4 +18,8 @@ export class PageListOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  public changeTitle(): void {
+    this.title = 'title changed';
+  }
 }
